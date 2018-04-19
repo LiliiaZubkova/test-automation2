@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElement;
+
 public class FifthTest {
 
     static WebDriver driver;
@@ -44,7 +46,7 @@ public class FifthTest {
         driver.findElement(By.id("search_query_top")).sendKeys(query2);
 
         (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.textToBePresentInElement(By.xpath("//*[@id=\"index\"]/div[2]/ul/li[1]"), query2));
+                .until(textToBePresentInElement(By.xpath("//*[@id=\"index\"]/div[2]/ul/li[1]"), query2));
 
     }
 }
